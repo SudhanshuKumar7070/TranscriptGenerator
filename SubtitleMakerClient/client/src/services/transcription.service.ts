@@ -1,4 +1,4 @@
-const API_URL = ' https://transcriptgenerator-backend.onrender.com/api/v1';
+const API_URL = 'https://transcriptgenerator-backend.onrender.com/api/v1';
 
 export const transcriptionService = {
   async transcribeVideo(file: File): Promise<string> {
