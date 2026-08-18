@@ -1,7 +1,7 @@
 import path from "node:path";
 import multer from "multer";
 
-const uploadDir = path.join(process.cwd(), "public", "temp");
+const uploadDir = path.join(process.cwd(), "Public", "temp");
 
 const storage = multer.diskStorage({
   destination: (_req, _file, cb) => {
@@ -20,4 +20,4 @@ export const upload = multer({
   },
 });
 
-export const uploadPath = "/public/temp";
+export const uploadPath = "/Public/temp";
