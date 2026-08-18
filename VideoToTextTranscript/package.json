@@ -1,0 +1,29 @@
+{
+  "name": "videototexttranscript",
+  "version": "1.0.0",
+  "description": "this is mini project to convert video to audio",
+  "main": "index.ts",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node --loader ts-node/esm index.ts",
+    "dev": "nodemon --watch index.ts --watch service --watch config --ext ts --ignore node_modules --exec node --loader ts-node/esm index.ts"
+  },
+  "author": "sk",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "multer": "^2.2.0",
+    "nodejs-whisper": "^0.3.1",
+    "nodemon": "^3.1.14"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/multer": "^2.2.0",
+    "@types/node": "^26.2.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
