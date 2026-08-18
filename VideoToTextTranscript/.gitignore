@@ -9,8 +9,8 @@ coverage/
 
 # Whisper models and generated runtime files
 models/
-Public/temp/
-Public/audio/
+# Public/temp/
+# Public/audio/
 
 # Environment and local configuration
 .env
