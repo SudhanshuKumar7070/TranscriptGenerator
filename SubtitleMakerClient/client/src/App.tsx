@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect } from 'react';
 import { Header } from './components/Header';
 import { VideoUploader } from './components/VideoUploader';
 import { ProcessingState } from './components/ProcessingState';
@@ -7,11 +7,31 @@ import { ErrorState } from './components/ErrorState';
 import { transcriptionService } from './services/transcription.service';
 import type { ApplicationStatus } from './types/transcription';
 
+const healthPing = async()=>{
+  await fetch("http://localhost:5000/ping",{
+    method:"GET"
+  }).then(()=>{
+    console.log("ping made");
+  }).catch((err)=>{
+    console.log(err)
+  })
+}
+
 function App() {
   const [status, setStatus] = useState<ApplicationStatus>('idle');
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
   const [transcript, setTranscript] = useState<string>('');
   const [errorMessage, setErrorMessage] = useState<string>('');
+
+  
+
+  useEffect(()=>{
+    setTimeout(()=>{
+    healthPing();
+  },1000000)
+  },[])
+  
+
 
   const handleFileSelect = useCallback((file: File | null) => {
     setSelectedFile(file);
